@@ -9,8 +9,12 @@ It's simple, in "modules\sizeof\size.py" you will find "replacements", this list
 ____
 Below I have attached a GIF to demonstrate my compressor in action.
 ![qcompressor](https://github.com/user-attachments/assets/a7a79aa1-3a18-4924-96fb-500c45a4578f)
+
+## Requires
 ____
+> colorama (`pip install colorama`)
 
 ## What do I want to do?
+____
 I would rather try to somehow compress the file to zeros and ones, so that later I can rewrite them in the same way, I think the compression will be stronger this way, because it will be easier to decompress 0 and 1 than to make a long list. 
 For example, if there is a repetition of seven ones and 3 zeros, then they can be compressed to two zeros and two ones, this is already 6 bytes less, and now imagine that there will be about 100-200 of them.
