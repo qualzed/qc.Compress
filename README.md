@@ -8,7 +8,10 @@ ____
 It's simple, in "modules\sizeof\size.py" you will find "replacements", this list contains information with bytes that need to be replaced with what is needed. You can manually fill the list, in future updates I will fill it myself.
 ____
 Below I have attached a GIF to demonstrate my compressor in action.
+# OLD VERSION
 ![qcompressor](https://github.com/user-attachments/assets/a7a79aa1-3a18-4924-96fb-500c45a4578f)
+# NEW VERSION
+![image](https://github.com/user-attachments/assets/36f80ab9-ab2b-400d-b8a6-eec34309513d)
 
 ## Requires
 ____
