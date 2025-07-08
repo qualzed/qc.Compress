@@ -1,39 +1,39 @@
-import os
-import time
+from PyQt6.QtWidgets import QApplication, QMainWindow, QPushButton, QWidget, QVBoxLayout, QFileDialog
 from modules.byte import Byte
 from modules.debyte import deByte
+import sys
 
-menu = """
-> Compress file [1]
-> Deompress file [2]
-> Exit [3]
-"""
+class MainWindow(QMainWindow):
+    def __init__(self):
+        super().__init__()
 
-def qc():
-    while True:
-        os.system("cls")
-        print(menu)
-        setting = int(input(">> "))
-        match setting:
-            case 1:
-                os.system("cls")
-                setting = input("Path to file >> ")
-                try:
-                    Byte(setting)
-                except Exception as e:
-                    print("An error {e}")
-            case 2:
-                os.system("cls")
-                setting = input("Path to .qc file >> ")
-                try:
-                    deByte(setting)
-                except Exception as e:
-                    print(f"An error {e}")
-            case 3:
-                os.system("cls")
-                print("Goodbye")
-                time.sleep(3)
-                exit(0)
+        self.setWindowTitle("qc.Compress")
 
-if __name__ == '__main__':
-    qc()
+        compress_button = QPushButton("Compress")
+        decompress_button = QPushButton("Decompress")
+
+        compress_button.clicked.connect(self.run_compress)
+        decompress_button.clicked.connect(self.run_decompress)
+
+        layout = QVBoxLayout()
+        layout.addWidget(compress_button)
+        layout.addWidget(decompress_button)
+
+        container = QWidget()
+        container.setLayout(layout)
+        self.setCentralWidget(container)
+
+    def run_compress(self):
+        path, _ = QFileDialog.getOpenFileName(self, "Select a file to compress")
+        if path:
+            Byte(path)
+
+    def run_decompress(self):
+        path, _ = QFileDialog.getOpenFileName(self, "Select a file to decompress")
+        if path:
+            deByte(path)
+
+app = QApplication(sys.argv)
+window = MainWindow()
+window.show()
+app.exec()
