@@ -1,4 +1,6 @@
 from PyQt6.QtWidgets import QApplication, QMainWindow, QPushButton, QWidget, QVBoxLayout, QFileDialog
+from PyQt6.QtGui import QIcon
+from PyQt6.QtCore import Qt
 from modules.byte import Byte
 from modules.debyte import deByte
 import sys
@@ -8,6 +10,8 @@ class MainWindow(QMainWindow):
         super().__init__()
 
         self.setWindowTitle("qc.Compress")
+        self.setWindowFlags(Qt.WindowType.WindowCloseButtonHint)
+        self.setWindowIcon(QIcon("icon.png"))
 
         compress_button = QPushButton("Compress")
         decompress_button = QPushButton("Decompress")
