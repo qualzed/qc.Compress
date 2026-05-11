@@ -39,7 +39,7 @@ replacements = [
     (b"\x33\xC0\x5D\xC3", b".e3_"),
     (b"\x83\xEC\x08", b".e4_"),
     (b"\xE8\x00\x00\x00\x00", b".e5_"),
-    (b"\x00\x00\x00\x00\x00\x00\x00\x00", b".e6_"),
+    (b"\x00\x00\x00\x00\x00\x00\x00", b".e6_"),
     (b".rdata", b".f1_"),
     (b".reloc", b".f2_"),
     (b".text", b".f3_"),
@@ -57,4 +57,7 @@ replacements = [
     (b"\x20\x20\x20\x20\x20\x20\x20\x20", b".h1_"),
     (b"\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF", b".h2_"),
     (b"AAAAAAAA", b".h3_"),
+    (b"\x20\x6e\x61\x6d\x65\x3d\x22", b".h4_"),
+    (b"\x69\x74\x65\x6d\x3e\x0d\x0a", b".h5_"),
+    (b"\xff\x3b\x15\xff\x3b\x15\xff", b".h6_")
 ]
